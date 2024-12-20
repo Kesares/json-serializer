@@ -15,6 +15,16 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        String json;
+        try (JsonReader reader = new JsonReader(PATH)) {
+            json = reader.read();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        JsonParser parser = new JsonParser();
+        parser.parse(json);
     }
 
     private static List<Test> getTests() {

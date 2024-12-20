@@ -14,8 +14,8 @@ public class JsonWriter implements AutoCloseable {
     private final boolean isWritingCompactPrimitiveArray;
     private int indentLevel = 0;
 
-    public JsonWriter(Path path, boolean isCompactPrimitivArray) {
-        this.isWritingCompactPrimitiveArray = isCompactPrimitivArray;
+    public JsonWriter(Path path, boolean isWritingCompactPrimitiveArray) {
+        this.isWritingCompactPrimitiveArray = isWritingCompactPrimitiveArray;
         try {
             this.writer = Files.newBufferedWriter(path);
         } catch (IOException e) {
